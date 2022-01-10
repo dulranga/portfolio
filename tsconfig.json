@@ -4,18 +4,14 @@
     "paths": {
       "@components/*": ["src/components/*"],
       "@styles/*": ["src/styles/*"],
-      "@graphQL/*": ["src/graphql/*"],
       "@interfaces/*": ["src/interfaces/*"],
       "@errors/*": ["src/errors/*"],
+      "@providers/*": ["src/providers/*"],
+      "@constants/*": ["src/constants/*"],
       "@images/*": ["/public/images/*"]
     },
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -27,16 +23,8 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-   
+    "incremental": true
   },
-  "include": [
-    "next-env.d.ts",
-    "src/*",
-    "src/**/*.ts", 
-    "**/*.ts",
-    "**/*.tsx"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["next-env.d.ts", "src/*", "src/**/*.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
 }
