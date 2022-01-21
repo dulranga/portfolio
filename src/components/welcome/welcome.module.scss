@@ -1,0 +1,48 @@
+.welcome {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  &::after {
+    width: 300px;
+    right: 0;
+    transform-origin: 0 0;
+    background: lightcoral;
+  }
+  &::before {
+    width: 200px;
+    background-color: lightgreen;
+    left: 0;
+    transform-origin: 100% 100%;
+  }
+
+  &::after,
+  &::before {
+    content: "";
+    filter: blur(100px);
+    z-index: -1;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    animation: rotator 5s infinite forwards linear;
+    position: absolute;
+  }
+}
+
+@keyframes rotator {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
