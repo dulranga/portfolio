@@ -4,7 +4,7 @@ import npmLogo from "@assets/tech/npm.png";
 import reactLogo from "@assets/tech/react.png";
 import reduxLogo from "@assets/tech/redux.png";
 import muiLogo from "@assets/tech/mui.png";
-import { LocalLibrary, School } from "@material-ui/icons";
+import { LocalLibrary } from "@material-ui/icons";
 import Image from "next/image";
 import { FC } from "react";
 import styles from "./tech.module.scss";
@@ -29,7 +29,7 @@ const TechStack: FC<TechStackProps> = () => {
       </legend>
       <div className={styles.content}>
         {tech.map((technology) => (
-          <div className={styles.tech}>
+          <div className={styles.tech} key={technology.name}>
             <div className={styles.cover}>
               <Image
                 src={technology.logo}

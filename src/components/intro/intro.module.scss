@@ -1,9 +1,10 @@
 .container {
-  min-height: 100vh;
+  min-height: 70vh;
+  margin: 3rem auto;
   display: flex;
   justify-content: space-evenly;
   max-width: 900px;
-  margin: auto;
+
   align-items: center;
 
   @media screen and (max-width: 480px) {
@@ -12,12 +13,33 @@
 }
 
 .content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-self: center;
   h1 {
     &::first-letter {
-      border-bottom: 5px solid #00ff7f;
+      border-bottom: 5px solid var(--primary);
     }
     &::selection {
-      background-color: darken($color: #00ff7f, $amount: 20);
+      background-color: var(--primary-dark);
     }
+  }
+}
+
+.resume {
+  padding: 0.5rem;
+  font-size: 0.6rem;
+  margin-top: 2rem;
+  width: fit-content;
+  justify-self: flex-end;
+  border: 2px solid var(--primary-dark);
+  color: #00ff7f;
+  background: transparent;
+  transition: 0.2s ease all;
+  &:hover,
+  &:focus {
+    background: var(--primary);
+    color: #000;
   }
 }
