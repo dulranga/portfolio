@@ -1,0 +1,64 @@
+.tech {
+  width: 300px;
+  flex: 1;
+  flex-shrink: 0;
+  flex-basis: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content {
+  padding: 2rem 0;
+  width: 100%;
+  overflow-x: scroll;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  flex-flow: row nowrap;
+}
+.cover {
+  position: relative;
+}
+.learning {
+  position: absolute;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 10px;
+  top: 50%;
+  transition: ease 0.2s all;
+  padding: 5px;
+  min-width: 30px;
+  height: 30px;
+  background-color: var(--primary-dark);
+  color: #fff;
+  border-radius: 50px;
+
+  span {
+    max-width: 0;
+    position: absolute;
+    opacity: 0;
+    padding: 10px;
+  }
+
+  svg {
+    font-size: inherit;
+  }
+
+  &:hover {
+    span {
+      max-width: none;
+      opacity: 1;
+      position: unset;
+    }
+  }
+}
+
+.name {
+  font-weight: 300;
+  font-size: 0.7rem;
+}

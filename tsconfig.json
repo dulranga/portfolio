@@ -8,6 +8,7 @@
       "@errors/*": ["src/errors/*"],
       "@providers/*": ["src/providers/*"],
       "@constants/*": ["src/constants/*"],
+      "@assets/*": ["src/assets/*"],
       "@images/*": ["/public/images/*"]
     },
     "target": "es5",
