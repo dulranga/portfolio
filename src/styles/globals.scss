@@ -2,16 +2,20 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  transition: 0.2s ease all;
   scroll-margin: 5rem;
 }
 
 html {
   scroll-behavior: smooth;
+  font-size: 32px;
+
+  @media screen and (max-width: 480px) {
+    font-size: 16px;
+  }
 }
 body,
 button {
-  font-family: sans-serif;
+  font-family: "Inter", sans-serif;
 }
 button {
   outline: none;
@@ -42,4 +46,12 @@ textarea {
 main {
   max-width: 1500px;
   margin: auto;
+}
+h1 {
+  font-weight: 900;
+  color: #fff;
+}
+body {
+  background-color: #121212;
+  color: #c2c2c2;
 }
