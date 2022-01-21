@@ -1,0 +1,23 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-evenly;
+  max-width: 900px;
+  margin: auto;
+  align-items: center;
+
+  @media screen and (max-width: 480px) {
+    flex-direction: column;
+  }
+}
+
+.content {
+  h1 {
+    &::first-letter {
+      border-bottom: 5px solid #00ff7f;
+    }
+    &::selection {
+      background-color: darken($color: #00ff7f, $amount: 20);
+    }
+  }
+}
