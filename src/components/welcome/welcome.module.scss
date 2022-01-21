@@ -1,40 +1,18 @@
+.container {
+}
 .welcome {
   width: 100%;
   height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-
+  z-index: 5;
   h1 {
+    z-index: 2;
+    position: sticky;
     font-size: 3rem;
-  }
-
-  &::after {
-    width: 300px;
-    right: 0;
-    transform-origin: 0 0;
-    background: lightcoral;
-  }
-  &::before {
-    width: 200px;
-    background-color: lightgreen;
-    left: 0;
-    transform-origin: 100% 100%;
-  }
-
-  &::after,
-  &::before {
-    content: "";
-    filter: blur(100px);
-    z-index: -1;
-    aspect-ratio: 1/1;
-    border-radius: 50%;
-    animation: rotator 5s infinite forwards linear;
-    position: absolute;
+    height: 90vh;
+    top: calc(var(--i) * 3rem - 3rem);
+    padding-top: calc(50vh - 6rem);
+    text-align: center;
+    background: linear-gradient(to top, var(--color) 70%, transparent);
   }
 }
 
@@ -44,5 +22,103 @@
   }
   to {
     transform: rotateZ(360deg);
+  }
+}
+.actions {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  position: sticky;
+  bottom: 0;
+  z-index: 5;
+}
+.skipper {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  border: transparent solid 2px;
+
+  border: none;
+
+  overflow: hidden;
+
+  float: right;
+  min-width: 45px;
+  height: 45px;
+  border-radius: 50px;
+
+  transition: all ease 0.2s;
+  span {
+    padding: 0;
+    position: absolute;
+    width: 0;
+    opacity: 0;
+  }
+
+  &:hover,
+  &:focus {
+    padding: 0.5rem;
+    background: var(--background);
+    border: #00ff7f solid 2px;
+
+    color: #fff;
+    span {
+      width: auto;
+      opacity: 1;
+      position: relative;
+    }
+  }
+  svg {
+    width: 30px;
+  }
+}
+.info {
+  text-align: center;
+  font-size: 0.75rem;
+
+  display: flex;
+  align-items: center;
+  filter: brightness(0.5);
+
+  margin: auto;
+  width: fit-content;
+  z-index: 0;
+  svg {
+    width: 30px;
+  }
+}
+
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  z-index: 5;
+
+  backface-visibility: hidden;
+
+  &::after,
+  &::before {
+    content: "";
+    filter: blur(100px);
+    // z-index: -1;
+    z-index: 15;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    animation: rotator 5s infinite forwards linear;
+    position: absolute;
+    top: 0;
+  }
+  &::after {
+    width: 10rem;
+    right: 0;
+    transform-origin: 0 center;
+    background: lightcoral;
+  }
+  &::before {
+    width: 8rem;
+    background-color: lightgreen;
+    left: 0;
+    transform-origin: 100% 100%;
   }
 }

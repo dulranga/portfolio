@@ -1,38 +1,51 @@
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect } from "react";
 import styles from "./welcome.module.scss";
+import { AllInbox, KeyboardArrowDown } from "@material-ui/icons";
 
-const notes = ["Welcome", "to", "a world of", "front-end developer"];
+const notes = [
+  { label: "Welcome" },
+  { label: "to" },
+  { label: "the home of" },
+  { label: "a front-end developer" },
+];
 
-interface WelcomeProps {}
+interface WelcomeProps {
+  skip?: () => void;
+}
 
-const Welcome: FC<WelcomeProps> = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [isFinished, setIsFinished] = useState(false);
-
-  const onWheel = (e: WheelEvent) => {
-    setCurrentSlide((prev) => {
-      console.log(prev, notes.length);
-      if (prev + 1 >= notes.length) {
-        setIsFinished(true);
-      }
-
-      if (e.deltaY < 0 && prev < 0) return prev - 1;
-      if (e.deltaY > 0) return prev + 1;
-      return 0;
-    });
-  };
-
+const Welcome: FC<WelcomeProps> = ({ skip }) => {
   useEffect(() => {
-    document.addEventListener("wheel", onWheel);
-    return () => {
-      document.removeEventListener("wheel", onWheel);
-    };
+    window.addEventListener("scroll", (e) => {
+      console.log(e);
+    });
   }, []);
-  if (isFinished) return <h1>finished</h1>;
 
   return (
-    <div className={styles.welcome}>
-      <h1>{notes[currentSlide]}</h1>
+    <div className={styles.container}>
+      <div className={styles.welcome}>
+        {notes.map((note, i) => {
+          const color = "#121212";
+          const styles = { "--i": i, "--color": color };
+          return (
+            // @ts-ignore
+            <h1 key={`note-${i}`} style={styles}>
+              {note.label}
+            </h1>
+          );
+        })}
+      </div>
+      <div className={styles.background}></div>
+
+      <div className={styles.actions}>
+        <button className={styles.skipper} onClick={skip}>
+          <AllInbox />
+          <span>Go to Main Content</span>
+        </button>
+        <div className={styles.info}>
+          <KeyboardArrowDown />
+          scroll
+        </div>
+      </div>
     </div>
   );
 };
