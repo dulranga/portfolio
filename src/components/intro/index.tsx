@@ -19,7 +19,21 @@ const Intro = React.forwardRef<HTMLElement>(({}: IntroProps, ref) => {
         />
       </div>
       <div className={styles.content}>
-        I am <h1>Dulranga Dhawanitha</h1>
+        <div>
+          <p>I am</p>
+          <h1>Dulranga Dhawanitha</h1>
+        </div>
+
+        <button className={styles.resume}>
+          <a
+            href="/CV.pdf"
+            download="dulranga-cv"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Get Resume
+          </a>
+        </button>
       </div>
     </section>
   );
