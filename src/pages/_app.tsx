@@ -8,6 +8,9 @@ const reportWebVitals = (metric: NextWebVitalsMetric) => {
   // console.log(metric);
 };
 
+// pat.ns.cloudflare.com
+// thaddeus.ns.cloudflare.com
+
 const NextApp = ({ Component, pageProps }: AppProps) => {
   return (
     <Layout>
