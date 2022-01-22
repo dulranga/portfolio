@@ -1,6 +1,9 @@
-import { FC, useEffect } from "react";
+import NextPage from "@components/next-page";
+import { ChevronRight } from "@material-ui/icons";
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { FC } from "react";
 import styles from "./welcome.module.scss";
-import { AllInbox, KeyboardArrowDown } from "@material-ui/icons";
 
 const notes = [
   { label: "Welcome" },
@@ -13,39 +16,32 @@ interface WelcomeProps {
   skip?: () => void;
 }
 
-const Welcome: FC<WelcomeProps> = ({ skip }) => {
-  useEffect(() => {
-    window.addEventListener("scroll", (e) => {
-      console.log(e);
-    });
-  }, []);
-
+const Welcome: FC<WelcomeProps> = () => {
   return (
     <div className={styles.container}>
       <div className={styles.welcome}>
         {notes.map((note, i) => {
-          const color = "#121212";
-          const styles = { "--i": i, "--color": color };
+          const variants = {
+            initial: { y: 100 },
+            enter: { y: 0 },
+          };
           return (
-            // @ts-ignore
-            <h1 key={`note-${i}`} style={styles}>
-              {note.label}
-            </h1>
+            <div className={styles.item} key={`note-${i}`}>
+              <motion.h1
+                variants={variants}
+                initial="initial"
+                animate="enter"
+                transition={{ delay: 0.2, type: "linear" }}
+              >
+                {note.label}
+              </motion.h1>
+            </div>
           );
         })}
       </div>
       <div className={styles.background}></div>
 
-      <div className={styles.actions}>
-        <button className={styles.skipper} onClick={skip}>
-          <AllInbox />
-          <span>Go to Main Content</span>
-        </button>
-        <div className={styles.info}>
-          <KeyboardArrowDown />
-          scroll
-        </div>
-      </div>
+      <NextPage link="/home" />
     </div>
   );
 };

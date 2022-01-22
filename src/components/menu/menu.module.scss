@@ -1,0 +1,63 @@
+$button-width: 2rem;
+
+.icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1000;
+  margin: 1rem;
+  // background-color: rebeccapurple;
+  background-color: transparent;
+  color: #fff;
+  border-radius: 50%;
+
+  width: $button-width;
+  border: 2px solid var(--primary-dark);
+  aspect-ratio: 1/1;
+}
+
+.menu {
+  width: 100%;
+  padding: 1rem;
+  // height: 100%;
+  background-color: var(--primary-dark);
+  position: fixed;
+  z-index: 999;
+  transition: all 0.2s ease;
+  h1 {
+    font-size: 2rem;
+  }
+
+  overflow: hidden;
+}
+
+.link {
+  overflow: hidden;
+  margin: 0.5rem 0;
+  li {
+    width: 90%;
+    margin: auto;
+    font-size: 1.5rem;
+    color: #fff;
+    list-style-type: square;
+    &::after {
+      opacity: 0;
+
+      transition: all 0.2s ease;
+      position: absolute;
+      content: attr(data-name);
+      font-size: 3rem;
+      top: 50%;
+      transform: translateY(-50%);
+      white-space: nowrap;
+      right: 1rem;
+      letter-spacing: 1rem;
+    }
+    &:hover::after {
+      opacity: 0.5;
+    }
+    a {
+      width: 100%;
+    }
+  }
+}
