@@ -18,7 +18,7 @@ const Portfolio: FC<PortfolioProps> = () => {
       <h1>My BEST creations</h1>
       <div className={styles.portfolio_content}>
         {cards.map((card, i) => (
-          <PortfolioMini delay={0.1 * i} {...card} />
+          <PortfolioMini delay={0.1 * i} {...card} key={card.title + i} />
         ))}
       </div>
     </main>
