@@ -1,4 +1,5 @@
 import Intro from "@components/intro";
+import NextPage from "@components/next-page";
 import TechStack from "@components/tech-stack";
 import styles from "@styles/index.module.scss";
 import Link from "next/link";
@@ -11,7 +12,7 @@ const Home: FC<HomeProps> = ({}) => {
     <main>
       <Link href={"/"}>Back</Link>
       <Intro />
-      <TechStack />
+      <NextPage link="/tech-stack" />
       <section className={styles.more}>
         <h1>More and more content is coming on the way!</h1>
         <p>Hang tight!</p>
