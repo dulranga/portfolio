@@ -3,9 +3,12 @@
   margin: 3rem auto;
   display: flex;
   justify-content: space-evenly;
-  max-width: 900px;
+  max-width: 1000px;
 
   align-items: center;
+  .cover {
+    flex: 0.5;
+  }
 
   @media screen and (max-width: 480px) {
     flex-direction: column;
@@ -17,6 +20,7 @@
   justify-content: center;
   flex-direction: column;
   align-self: center;
+  flex: 1;
   h1 {
     &::first-letter {
       border-bottom: 5px solid var(--primary);
@@ -24,6 +28,9 @@
     &::selection {
       background-color: var(--primary-dark);
     }
+  }
+  small {
+    font-size: 0.75rem;
   }
 }
 

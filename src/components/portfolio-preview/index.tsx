@@ -2,7 +2,6 @@ import { motion, Variants } from "framer-motion";
 import Image from "next/image";
 import { FC } from "react";
 import styles from "./portfolio.module.scss";
-interface PortfolioMiniProps {}
 
 const variants: Variants = {
   initial: {
@@ -11,7 +10,6 @@ const variants: Variants = {
     x: 0,
   },
   animate: {
-    transition: { delay: 0.5 },
     opacity: 1,
     y: 0,
     x: 0,
@@ -22,7 +20,20 @@ const variants: Variants = {
     boxShadow: "0 0 100px 10px #000000",
   },
 };
-const PortfolioMini: FC<PortfolioMiniProps> = () => {
+
+interface PortfolioMiniProps {
+  delay: number;
+  title: string;
+  description: string;
+  image: string;
+}
+
+const PortfolioMini: FC<PortfolioMiniProps> = ({
+  delay,
+  title,
+  description,
+  image,
+}) => {
   return (
     <motion.div
       className={styles.container}
@@ -30,9 +41,10 @@ const PortfolioMini: FC<PortfolioMiniProps> = () => {
       initial="initial"
       animate="animate"
       whileHover="hover"
+      transition={{ delay }}
     >
       <Image
-        src={"/images/portfolios/spicygaming.jpg"}
+        src={image}
         width={480}
         height={320}
         alt="Spicy Gaming"
@@ -40,8 +52,8 @@ const PortfolioMini: FC<PortfolioMiniProps> = () => {
         objectFit="cover"
       />
       <div className={styles.content}>
-        <h2>Gaming Marketplace</h2>
-        <p>an NFSW games marketplace build with React.js</p>
+        <h2>{title}</h2>
+        <p>{description}</p>
       </div>
     </motion.div>
   );
