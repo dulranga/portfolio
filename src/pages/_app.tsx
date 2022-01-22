@@ -20,7 +20,6 @@ const variants: Variants = {
 };
 
 const NextApp = ({ Component, pageProps, router }: AppProps) => {
-  console.log(router.route);
   return (
     <Layout>
       <Link href="/">/</Link>

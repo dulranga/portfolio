@@ -24,8 +24,7 @@ interface TechStackProps {}
 
 const TechStack: FC<TechStackProps> = () => {
   const { scrollYProgress } = useViewportScroll();
-  const translateX = useTransform(scrollYProgress, [0, 0.5, 1], [0, 0, -500]);
-  console.log({ scrollYProgress });
+  const translateX = useTransform(scrollYProgress, [0, 0, 1], [0, 0, -600]);
 
   return (
     <main className={styles.section}>

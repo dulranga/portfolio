@@ -7,7 +7,7 @@ interface TechProps {}
 const Tech: FC<TechProps> = () => {
   return (
     <div>
-      <TechStack />;
+      <TechStack />
       <NextPage link="/portfolio" />
     </div>
   );

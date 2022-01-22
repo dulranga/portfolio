@@ -22,6 +22,12 @@ const Intro = React.forwardRef<HTMLElement>(({}: IntroProps, ref) => {
         <div>
           <p>I am</p>
           <h1>Dulranga Dhawanitha</h1>
+          <p>
+            <small>
+              a Frontend developer with 3+ years of experience with
+              responsiveness, animations, bugs etc
+            </small>
+          </p>
         </div>
 
         <button className={styles.resume}>
