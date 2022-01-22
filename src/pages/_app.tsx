@@ -1,6 +1,7 @@
 import Layout from "@components/layout";
 import { AnimatePresence, motion, Variants } from "framer-motion";
 import { AppProps, NextWebVitalsMetric } from "next/app";
+import Link from "next/link";
 import "../styles/animations.scss";
 import "../styles/globals.scss";
 import "../styles/variables.globals.scss";
@@ -13,15 +14,16 @@ const reportWebVitals = (metric: NextWebVitalsMetric) => {
 // thaddeus.ns.cloudflare.com
 
 const variants: Variants = {
-  hidden: { opacity: 0, x: -200, y: 0 },
-  enter: { opacity: 1, x: 0, y: 0 },
-  exit: { opacity: 0, y: -200 },
+  hidden: { opacity: 0, scale: 0.9 },
+  enter: { opacity: 1, scale: 1 },
+  exit: { opacity: 0, scale: 1.2 },
 };
 
 const NextApp = ({ Component, pageProps, router }: AppProps) => {
   console.log(router.route);
   return (
     <Layout>
+      <Link href="/">/</Link>
       <AnimatePresence exitBeforeEnter>
         <motion.div
           variants={variants}
@@ -29,7 +31,7 @@ const NextApp = ({ Component, pageProps, router }: AppProps) => {
           animate="enter"
           exit="exit"
           key={router.route}
-          transition={{ type: "linear", duration: 0.5 }}
+          transition={{ type: "linear", duration: 0.1 }}
         >
           <Component {...pageProps} />
         </motion.div>
