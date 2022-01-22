@@ -1,15 +1,15 @@
 import Intro from "@components/intro";
 import TechStack from "@components/tech-stack";
 import Welcome from "@components/welcome";
-import styles from "@styles/index.module.scss";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import { FC, useRef } from "react";
 
 interface Props {}
 const Home: FC<Props> = ({}) => {
-  const contentRef = useRef<HTMLElement>(null);
+  const router = useRouter();
   const skipToMainContent = () => {
-    contentRef.current?.scrollIntoView();
+    router.push("/home");
   };
 
   return (
@@ -22,13 +22,6 @@ const Home: FC<Props> = ({}) => {
         />
       </Head>
       <Welcome skip={skipToMainContent} />
-      <Intro ref={contentRef} />
-      <TechStack />
-
-      <section className={styles.more}>
-        <h1>More and more content is coming on the way!</h1>
-        <p>Hang tight!</p>
-      </section>
     </main>
   );
 };
