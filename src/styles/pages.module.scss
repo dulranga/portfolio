@@ -6,3 +6,10 @@
   flex-direction: column;
   text-align: center;
 }
+
+.portfolio_content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1rem 0;
+}
