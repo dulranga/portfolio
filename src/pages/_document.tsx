@@ -22,9 +22,10 @@ class MyDocument extends Document {
             crossOrigin=""
           />
           <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;800;900&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;800;900&family=Mochiy+Pop+P+One&display=swap"
             rel="stylesheet"
           />
+
           <meta name="theme-color" content="#00ff7f" />
           <meta name="robots" content="follow, index" />
           <meta property="og:locale" content="en_US" />
