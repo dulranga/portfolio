@@ -1,13 +1,21 @@
-import { FC } from "react";
+import { motion, Variants } from "framer-motion";
+import { FC, useEffect, useState } from "react";
 import Cursor from "./cursor";
 import Footer from "./footer";
+import Menu from "./menu";
 
 interface LayoutProps {}
 
 const Layout: FC<LayoutProps> = ({ children }) => {
+  const [mobile, setMobile] = useState(false);
+  useEffect(() => {
+    setMobile(matchMedia("(max-width: 480px)").matches);
+  }, []);
+
   return (
     <>
-      <Cursor />
+      {!mobile && <Cursor />}
+      <Menu />
       {children}
       <Footer />
     </>

@@ -5,6 +5,7 @@ interface CursorProps {}
 
 const Cursor: FC<CursorProps> = () => {
   const cursor = useRef<HTMLDivElement>(null);
+
   const changePosition = (e: MouseEvent) => {
     cursor.current?.setAttribute(
       "style",
@@ -13,6 +14,9 @@ const Cursor: FC<CursorProps> = () => {
   };
   useEffect(() => {
     window.addEventListener("mousemove", changePosition);
+    return () => {
+      window.removeEventListener("mousemove", changePosition);
+    };
   }, []);
   return <div ref={cursor} className={styles.cursor}></div>;
 };

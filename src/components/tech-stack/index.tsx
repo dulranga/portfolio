@@ -28,7 +28,7 @@ const TechStack: FC<TechStackProps> = () => {
   console.log({ scrollYProgress });
 
   return (
-    <section>
+    <main className={styles.section}>
       <legend>
         <h1>Technologies I am familiar</h1>
       </legend>
@@ -57,7 +57,7 @@ const TechStack: FC<TechStackProps> = () => {
           ))}
         </motion.div>
       </div>
-    </section>
+    </main>
   );
 };
 
