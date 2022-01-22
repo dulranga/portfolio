@@ -8,6 +8,7 @@ import { LocalLibrary } from "@material-ui/icons";
 import Image from "next/image";
 import { FC } from "react";
 import styles from "./tech.module.scss";
+import { motion, useTransform, useViewportScroll } from "framer-motion";
 
 const tech = [
   { name: "ReactJS", logo: reactLogo },
@@ -22,33 +23,39 @@ const tech = [
 interface TechStackProps {}
 
 const TechStack: FC<TechStackProps> = () => {
+  const { scrollYProgress } = useViewportScroll();
+  const translateX = useTransform(scrollYProgress, [0, 0.5, 1], [0, 0, -500]);
+  console.log({ scrollYProgress });
+
   return (
     <section>
       <legend>
         <h1>Technologies I am familiar</h1>
       </legend>
       <div className={styles.content}>
-        {tech.map((technology) => (
-          <div className={styles.tech} key={technology.name}>
-            <div className={styles.cover}>
-              <Image
-                src={technology.logo}
-                alt={technology.name}
-                width={200}
-                height={200}
-                objectFit="contain"
-              />
-              {technology.learning && (
-                <div className={styles.learning}>
-                  <LocalLibrary />
-                  <span>Learning</span>
-                </div>
-              )}
-            </div>
+        <motion.div className={styles.wrapper} style={{ translateX }}>
+          {tech.map((technology) => (
+            <div className={styles.tech} key={technology.name}>
+              <div className={styles.cover}>
+                <Image
+                  src={technology.logo}
+                  alt={technology.name}
+                  width={200}
+                  height={200}
+                  objectFit="contain"
+                />
+                {technology.learning && (
+                  <div className={styles.learning}>
+                    <LocalLibrary />
+                    <span>Learning</span>
+                  </div>
+                )}
+              </div>
 
-            <div className={styles.name}>{technology.name}</div>
-          </div>
-        ))}
+              <div className={styles.name}>{technology.name}</div>
+            </div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );
