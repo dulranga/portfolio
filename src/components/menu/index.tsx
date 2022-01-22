@@ -58,7 +58,7 @@ const Menu: FC<MenuProps> = () => {
           >
             <h1>Helllo!</h1>
             {links.map((link, i) => (
-              <ul className={styles.link}>
+              <ul className={styles.link} key={link.path}>
                 <motion.li
                   variants={linkVariants}
                   initial="initial"
