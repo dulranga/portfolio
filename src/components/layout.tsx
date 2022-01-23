@@ -3,6 +3,7 @@ import { FC, useEffect, useState } from "react";
 import Cursor from "./cursor";
 import Footer from "./footer";
 import Menu from "./menu";
+import MouseMove from "./mouse-move";
 
 interface LayoutProps {}
 
@@ -15,6 +16,7 @@ const Layout: FC<LayoutProps> = ({ children }) => {
   return (
     <>
       {!mobile && <Cursor />}
+
       <Menu />
       {children}
       <Footer />
