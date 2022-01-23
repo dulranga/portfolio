@@ -19,6 +19,7 @@ $button-width: 2rem;
 .menu {
   width: 100%;
   padding: 1rem;
+  top: 0;
   // height: 100%;
   background-color: var(--primary-dark);
   position: fixed;
@@ -40,9 +41,9 @@ $button-width: 2rem;
       width: 20px;
       height: 20px;
     }
-  }
-  a:hover {
-    text-decoration: underline;
+    a:hover {
+      text-decoration: underline;
+    }
   }
 
   overflow: hidden;

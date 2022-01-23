@@ -51,6 +51,7 @@ const Menu: FC<MenuProps> = () => {
             initial="initial"
             animate="enter"
             exit="exit"
+            transition={{ type: "spring", stiffness: 100, damping: 8 }}
           >
             <h1>Helllo!</h1>
             <ul className={styles.link}>
@@ -72,6 +73,7 @@ const Menu: FC<MenuProps> = () => {
                 </div>
               ))}
             </ul>
+
             <h3>
               Impressed by my work? &nbsp;
               <a

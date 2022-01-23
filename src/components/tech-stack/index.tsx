@@ -1,14 +1,14 @@
 import angularLogo from "@assets/tech/angular.png";
+import muiLogo from "@assets/tech/mui.png";
 import nextLogo from "@assets/tech/nextjs.png";
 import npmLogo from "@assets/tech/npm.png";
 import reactLogo from "@assets/tech/react.png";
 import reduxLogo from "@assets/tech/redux.png";
-import muiLogo from "@assets/tech/mui.png";
 import { LocalLibrary } from "@material-ui/icons";
+import { motion, useTransform, useViewportScroll } from "framer-motion";
 import Image from "next/image";
 import { FC } from "react";
 import styles from "./tech.module.scss";
-import { motion, useTransform, useViewportScroll } from "framer-motion";
 
 const CARD_SIZE = 300;
 
@@ -26,6 +26,7 @@ interface TechStackProps {}
 
 const TechStack: FC<TechStackProps> = () => {
   const { scrollYProgress } = useViewportScroll();
+
   const translateX = useTransform(
     scrollYProgress,
     [0, 1],
