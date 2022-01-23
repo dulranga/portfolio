@@ -2,11 +2,11 @@
   display: flex;
   align-items: baseline;
   width: fit-content;
-
   .label {
     padding: 10px 0;
     position: relative;
     color: #fff;
+    font-size: 1.2rem;
     &::after {
       position: absolute;
       max-width: 0%;

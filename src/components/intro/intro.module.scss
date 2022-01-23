@@ -35,15 +35,17 @@
 }
 
 .resume {
-  padding: 0.5rem;
-  font-size: 0.6rem;
   margin-top: 2rem;
   width: fit-content;
   justify-self: flex-end;
-  border: 2px solid var(--primary-dark);
   color: #00ff7f;
   background: transparent;
   transition: 0.2s ease all;
+
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  border: 3px solid var(--primary-dark);
+
   &:hover,
   &:focus {
     background: var(--primary);

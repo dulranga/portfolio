@@ -1,12 +1,13 @@
-$card-background: #483d8b;
+$card-background: #015a17;
 
 .container {
   max-width: 400px;
   font-size: 0.5rem;
   position: relative;
-  background-color: #483d8b;
+  background-color: lightgreen;
   z-index: 1;
   display: flex;
+  color: #000;
   flex-direction: column;
 
   .content {
@@ -29,7 +30,7 @@ $card-background: #483d8b;
     content: "";
     width: 100%;
     height: 100%;
-    background-color: deeppink;
+    background-color: var(--primary-dark);
     position: absolute;
     top: 0;
     left: 0;

@@ -35,7 +35,7 @@ const SocialLink: FC<SocialLinkProps> = ({ link, icon, label }) => {
             initial="initial"
           >
             <div className={styles.icon}>{icon}</div>
-            <div className={styles.label}>{label}</div>
+            <h2 className={styles.label}>{label}</h2>
           </motion.div>
         </div>
       </a>
