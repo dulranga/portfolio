@@ -10,6 +10,8 @@ import { FC } from "react";
 import styles from "./tech.module.scss";
 import { motion, useTransform, useViewportScroll } from "framer-motion";
 
+const CARD_SIZE = 300;
+
 const tech = [
   { name: "ReactJS", logo: reactLogo },
   { name: "Next.js", logo: nextLogo },
@@ -24,10 +26,18 @@ interface TechStackProps {}
 
 const TechStack: FC<TechStackProps> = () => {
   const { scrollYProgress } = useViewportScroll();
-  const translateX = useTransform(scrollYProgress, [0, 0, 1], [0, 0, -600]);
+  const translateX = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [0, -1 * CARD_SIZE * tech.length],
+    { clamp: true }
+  );
 
   return (
-    <main className={styles.section}>
+    <main
+      className={styles.section}
+      style={{ height: tech.length * 80 + "vh" }}
+    >
       <legend>
         <h1>Technologies I am familiar</h1>
       </legend>
