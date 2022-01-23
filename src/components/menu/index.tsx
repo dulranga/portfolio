@@ -1,4 +1,4 @@
-import { Menu as MenuIcon } from "@material-ui/icons";
+import { GitHub, Menu as MenuIcon } from "@material-ui/icons";
 import { AnimatePresence, motion, useCycle, Variants } from "framer-motion";
 import Link from "next/link";
 import { FC, useState } from "react";
@@ -32,9 +32,6 @@ const menuVariants: Variants = {
     clipPath: "clip-path: circle(0 at 100% 0%);",
     height: 0,
     opacity: 0,
-    transition: {
-      duration: 0.5,
-    },
   },
 };
 
@@ -54,26 +51,37 @@ const Menu: FC<MenuProps> = () => {
             initial="initial"
             animate="enter"
             exit="exit"
-            transition={{ type: "just" }}
           >
             <h1>Helllo!</h1>
-            {links.map((link, i) => (
-              <ul className={styles.link} key={link.path}>
-                <motion.li
-                  variants={linkVariants}
-                  initial="initial"
-                  animate="enter"
-                  exit="exit"
-                  transition={{ delay: 0.02 * i + 0.4 }}
-                  data-name={link.name}
-                  onClick={() => toggleOpen()}
-                >
-                  <Link href={link.path}>
-                    <a>{link.name}</a>
-                  </Link>
-                </motion.li>
-              </ul>
-            ))}
+            <ul className={styles.link}>
+              {links.map((link, i) => (
+                <div key={link.path}>
+                  <motion.li
+                    variants={linkVariants}
+                    initial="initial"
+                    animate="enter"
+                    exit="exit"
+                    transition={{ delay: 0.02 * i + 0.4 }}
+                    data-name={link.name}
+                    onClick={() => toggleOpen()}
+                  >
+                    <Link href={link.path}>
+                      <a>{link.name}</a>
+                    </Link>
+                  </motion.li>
+                </div>
+              ))}
+            </ul>
+            <h3>
+              Impressed by my work? &nbsp;
+              <a
+                href="https://github.com/dulranga/portfolio"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                See the <GitHub /> Repo
+              </a>
+            </h3>
           </motion.nav>
         )}
       </AnimatePresence>
