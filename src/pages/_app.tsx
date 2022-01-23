@@ -22,8 +22,7 @@ const variants: Variants = {
 const NextApp = ({ Component, pageProps, router }: AppProps) => {
   return (
     <Layout>
-      <Link href="/">/</Link>
-      <AnimatePresence exitBeforeEnter>
+      <AnimatePresence exitBeforeEnter initial={false}>
         <motion.div
           variants={variants}
           initial="hidden"

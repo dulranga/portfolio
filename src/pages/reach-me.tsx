@@ -3,13 +3,22 @@ import { Facebook, GitHub, Mail, Twitter, WhatsApp } from "@material-ui/icons";
 import { FC } from "react";
 
 import styles from "@styles/pages.module.scss";
+import Head from "next/head";
 
 interface ReachMeProps {}
 
 const ReachMe: FC<ReachMeProps> = () => {
   return (
     <main className={styles.reach_me}>
+      <Head>
+        <title>Reach Me - Dulranga</title>
+        <meta
+          name="description"
+          content="I am available in social-media. Leave a msg to start working for a brand new amazing website"
+        />
+      </Head>
       <div>
+        <h1>Reach Me</h1>
         <SocialLink
           label="Email"
           icon={<Mail htmlColor="#fff" />}

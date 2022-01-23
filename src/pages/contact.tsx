@@ -1,4 +1,5 @@
 import Input, { InputProps } from "@components/input";
+import { DownloadResume } from "@components/intro";
 import {
   Description,
   Mail,
@@ -7,6 +8,7 @@ import {
   ViewQuilt,
 } from "@material-ui/icons";
 import styles from "@styles/pages.module.scss";
+import Head from "next/head";
 import { FC, FormEvent, useState } from "react";
 
 interface ContactPageProps {}
@@ -81,6 +83,13 @@ const ContactPage: FC<ContactPageProps> = () => {
   };
   return (
     <main className={styles.contact_page}>
+      <Head>
+        <title>Contact Me - Dulranga</title>
+        <meta
+          name="description"
+          content="Contact me with a simple message. Hire me to build your Amazing website"
+        />
+      </Head>
       <h1>Say Hi !</h1>
 
       <div className="content">
@@ -93,9 +102,12 @@ const ContactPage: FC<ContactPageProps> = () => {
               {...field}
             />
           ))}
-          <button type="submit" className={styles.submit}>
-            send
-          </button>
+          <div>
+            <button type="submit" className={styles.submit}>
+              Send
+            </button>
+            <DownloadResume />
+          </div>
         </form>
       </div>
     </main>

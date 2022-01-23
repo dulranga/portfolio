@@ -29,20 +29,25 @@ const Intro = React.forwardRef<HTMLElement>(({}: IntroProps, ref) => {
             </small>
           </p>
         </div>
-
-        <button className={styles.resume}>
-          <a
-            href="/CV.pdf"
-            download="dulranga-cv"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Get Resume
-          </a>
-        </button>
+        <DownloadResume />
       </div>
     </section>
   );
 });
+
+export const DownloadResume: FC = () => {
+  return (
+    <button className={styles.resume}>
+      <a
+        href="/CV.pdf"
+        download="dulranga-cv"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Get Resume
+      </a>
+    </button>
+  );
+};
 
 export default Intro;
