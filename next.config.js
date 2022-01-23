@@ -6,4 +6,16 @@ module.exports = {
     minimumCacheTTL: 60 * 60,
   },
   poweredByHeader: false,
+  redirects: async () => {
+    const redirects = [
+      { destination: "https://github.com/dulranga", source: "/github" },
+      { destination: "https://facebook.com/dulrangaD", source: "/facebook" },
+      { destination: "https://twitter.com/dulrangaD", source: "/twitter" },
+    ];
+    return redirects.map((redirect) => ({
+      ...redirect,
+      permanent: true,
+      statusCode: 301,
+    }));
+  },
 };
