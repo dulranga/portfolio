@@ -1,3 +1,5 @@
+$card-background: #483d8b;
+
 .container {
   max-width: 400px;
   font-size: 0.5rem;
@@ -19,6 +21,9 @@
   }
   p {
     font-weight: 300;
+  }
+  .image {
+    background: $card-background;
   }
   &::after {
     content: "";

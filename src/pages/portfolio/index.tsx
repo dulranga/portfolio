@@ -2,6 +2,7 @@ import PortfolioMini from "@components/portfolio-preview";
 import { FC } from "react";
 import styles from "@styles/pages.module.scss";
 import Head from "next/head";
+import NextPage from "@components/next-page";
 
 interface PortfolioProps {}
 
@@ -21,6 +22,7 @@ const Portfolio: FC<PortfolioProps> = () => {
           <PortfolioMini delay={0.1 * i} {...card} key={card.title + i} />
         ))}
       </div>
+      <NextPage link="/reach-me" />
     </main>
   );
 };
