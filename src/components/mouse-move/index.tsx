@@ -16,15 +16,14 @@ const MouseMove: FC<MouseMoveProps> = ({ start, end, children }) => {
   const y = useTransform(move, [0, 1000], [start.y, end.y], { clamp: true });
 
   useEffect(() => {
+    const trackMove = (e: MouseEvent) => {
+      move.set(e.pageX);
+    };
     window.addEventListener("mousemove", trackMove);
     return () => {
       window.removeEventListener("mousemove", trackMove);
     };
   }, []);
-
-  const trackMove = (e: MouseEvent) => {
-    move.set(e.pageX);
-  };
 
   return (
     <motion.div
