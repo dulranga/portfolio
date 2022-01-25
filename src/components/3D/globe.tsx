@@ -1,39 +1,51 @@
-import { Box, OrbitControls, Sphere } from "@react-three/drei";
-import styles from "./3d.module.scss";
-import { Canvas } from "@react-three/fiber";
-import { FC, useEffect, useState } from "react";
+import { OrbitControls, Sphere } from "@react-three/drei";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { FC, useEffect, useRef, useState } from "react";
 import { Texture, TextureLoader } from "three";
-import { text } from "stream/consumers";
+import styles from "./3d.module.scss";
 
 interface GlobeProps {}
 
 const Globe: FC<GlobeProps> = () => {
-  const [texture, setTexture] = useState<{ [key: string]: Texture | null }>({
-    map: null,
-  });
-  useEffect(() => {
-    const loader = new TextureLoader();
-    const map = loader.load("/3d/moon.jpg");
-    const earth = loader.load("3d/earth.jpg");
-    const earthBumps = loader.load("3d/earth.bump.jpg");
-    setTexture((prev) => ({ ...prev, map, earth, bumps: earthBumps }));
-  }, []);
   return (
     <Canvas className={styles.globe_canvas}>
+      <Earth />
       <spotLight intensity={1} color={"#fff"} position={[0, 10, 30]} />
 
-      <ambientLight intensity={1} />
-      <Sphere args={[2, 100, 100]} rotation={[Math.PI / 12, -Math.PI, 0]}>
-        <meshStandardMaterial
-          attach="material"
-          map={texture.earth}
-          normalMap={texture.bumps}
-        />
-      </Sphere>
+      <ambientLight intensity={2} />
 
       <OrbitControls enableZoom={false} />
     </Canvas>
   );
 };
+const Earth = () => {
+  const [texture, setTexture] = useState<{ [key: string]: Texture | null }>({});
+  const loader = new TextureLoader();
 
+  const sphere = useRef<any>(null);
+
+  useEffect(() => {
+    const earth = loader.load("/3d/earth.jpg");
+    const bumps = loader.load("/3d/earth.bump.jpg");
+    setTexture((prev) => ({ ...prev, earth, bumps }));
+  }, []);
+
+  useFrame(() => {
+    if (sphere.current) sphere.current.rotation.y += 0.006;
+  });
+
+  return (
+    <Sphere
+      args={[2, 100, 100]}
+      rotation={[Math.PI / 12, -Math.PI, 0]}
+      ref={sphere}
+    >
+      <meshStandardMaterial
+        attach="material"
+        map={texture.earth}
+        normalMap={texture.bumps}
+      />
+    </Sphere>
+  );
+};
 export default Globe;

@@ -22,8 +22,18 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  h1 {
-    margin-bottom: 1rem;
+
+  & > * {
+    &:nth-child(2) {
+      flex: 0.5;
+    }
+    &:nth-child(1) {
+      flex: 0.5;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    flex-direction: column-reverse;
+    padding-bottom: 2rem;
   }
 }
 

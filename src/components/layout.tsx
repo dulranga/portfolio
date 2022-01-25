@@ -1,16 +1,15 @@
-import { motion, Variants } from "framer-motion";
 import { FC, useEffect, useState } from "react";
+import ThreeD from "./3D";
 import Cursor from "./cursor";
 import Footer from "./footer";
 import Menu from "./menu";
-import MouseMove from "./mouse-move";
 
 interface LayoutProps {}
 
 const Layout: FC<LayoutProps> = ({ children }) => {
   const [mobile, setMobile] = useState(false);
   useEffect(() => {
-    setMobile(matchMedia("(max-width: 480px)").matches);
+    setMobile(matchMedia("(max-width: 840px)").matches);
   }, []);
 
   return (
@@ -20,6 +19,7 @@ const Layout: FC<LayoutProps> = ({ children }) => {
       <Menu />
       {children}
       <Footer />
+      <ThreeD />
     </>
   );
 };
