@@ -4,6 +4,7 @@ import { FC } from "react";
 
 import styles from "@styles/pages.module.scss";
 import Head from "next/head";
+import Globe from "@components/3D/globe";
 
 interface ReachMeProps {}
 
@@ -45,7 +46,7 @@ const ReachMe: FC<ReachMeProps> = () => {
           link="/github"
         />
       </div>
-      <h1>globe</h1>
+      <Globe />
     </main>
   );
 };
