@@ -1,5 +1,6 @@
 import { motion, Variants } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { FC } from "react";
 import styles from "./portfolio.module.scss";
 
@@ -8,6 +9,7 @@ interface PortfolioMiniProps {
   title: string;
   description: string;
   image: string;
+  id: string;
 }
 
 const PortfolioMini: FC<PortfolioMiniProps> = ({
@@ -15,6 +17,7 @@ const PortfolioMini: FC<PortfolioMiniProps> = ({
   title,
   description,
   image,
+  id,
 }) => {
   const variants: Variants = {
     initial: {
@@ -54,7 +57,11 @@ const PortfolioMini: FC<PortfolioMiniProps> = ({
         objectFit="cover"
       />
       <div className={styles.content}>
-        <h2>{title}</h2>
+        <h2>
+          <Link href={`portfolio/${id}`}>
+            <a>{title}</a>
+          </Link>
+        </h2>
         <p>{description}</p>
       </div>
     </motion.div>
