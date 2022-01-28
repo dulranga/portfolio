@@ -5,6 +5,7 @@ import { FC } from "react";
 import styles from "@styles/pages.module.scss";
 import Head from "next/head";
 import Globe from "@components/3D/globe";
+import NextPage from "@components/next-page";
 
 interface ReachMeProps {}
 
@@ -25,7 +26,9 @@ const ReachMe: FC<ReachMeProps> = () => {
           <SocialLink
             label="Email"
             icon={<Mail htmlColor="#fff" />}
-            link="/github"
+            link={encodeURI(
+              "mailto:dulranga.webdesign@gmail.com?subject=Website Creation&body=Hi, I am interested to create my next website with you! Can we discuss that?"
+            )}
           />
           <SocialLink
             label="Github"
@@ -35,22 +38,23 @@ const ReachMe: FC<ReachMeProps> = () => {
           <SocialLink
             label="Facebook"
             icon={<Facebook htmlColor="#4267B2" />}
-            link="/github"
+            link="/facebook"
           />
           <SocialLink
             label="Twitter"
             icon={<Twitter htmlColor="#00acee" />}
-            link="/github"
+            link="/twitter"
           />
           <SocialLink
             label="WhatsApp"
             icon={<WhatsApp htmlColor="#25D366" />}
-            link="/github"
+            link="/whatsapp"
           />
         </div>
 
         <Globe />
       </div>
+      <NextPage link="/contact" />
     </main>
   );
 };
