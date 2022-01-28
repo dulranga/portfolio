@@ -68,6 +68,9 @@ body {
 }
 
 @media screen and (max-width: 480px) {
+  main {
+    padding-top: 1rem;
+  }
   html {
     font-size: 24px;
   }

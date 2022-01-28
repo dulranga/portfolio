@@ -8,7 +8,7 @@ interface GlobeProps {}
 
 const Globe: FC<GlobeProps> = () => {
   return (
-    <Canvas className={styles.globe_canvas}>
+    <Canvas className={styles.globe_canvas} camera={{ fov: 50 }}>
       <Earth />
       <spotLight intensity={1} color={"#fff"} position={[0, 10, 30]} />
 
@@ -31,7 +31,7 @@ const Earth = () => {
   }, []);
 
   useFrame(() => {
-    if (sphere.current) sphere.current.rotation.y += 0.006;
+    if (sphere.current) sphere.current.rotation.y += 0.005;
   });
 
   return (

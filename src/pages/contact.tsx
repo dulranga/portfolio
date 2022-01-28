@@ -53,7 +53,7 @@ const fields = [
     icon: <Description />,
     inputElement: <textarea cols={10} rows={5} />,
     inputProps: {
-      placeholder: "helo",
+      placeholder: "my website is all about ...",
     },
   },
 ] as const;

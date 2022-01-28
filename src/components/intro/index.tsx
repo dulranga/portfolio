@@ -15,6 +15,7 @@ const Intro = React.forwardRef<HTMLElement>(({}: IntroProps, ref) => {
           width={300}
           height={400}
           blurDataURL={photo.blurDataURL}
+          placeholder="blur"
           objectFit="contain"
         />
       </div>

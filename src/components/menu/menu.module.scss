@@ -73,6 +73,9 @@ $button-width: 2rem;
       white-space: nowrap;
       right: 1rem;
       letter-spacing: 1rem;
+      @media screen and (max-width: 480px) {
+        display: none;
+      }
     }
     &:hover::after {
       opacity: 0.5;
