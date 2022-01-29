@@ -54,7 +54,13 @@ const Input: FC<InputProps & Common> = ({
         {inputElement ? (
           React.cloneElement(inputElement, { ...inputProps, onChange })
         ) : (
-          <input type="text" id={id} {...inputProps} onChange={onChange} />
+          <input
+            type="text"
+            id={id}
+            name={id}
+            {...inputProps}
+            onChange={onChange}
+          />
         )}
       </div>
     </motion.div>
