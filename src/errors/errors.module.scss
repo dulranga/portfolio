@@ -27,3 +27,16 @@ $close-btn-size: 0.6rem;
     }
   }
 }
+
+.input_error {
+  color: var(--error-text);
+  font-size: clamp(12px, 0.5rem, 18px);
+  position: relative;
+  min-height: 1.5ch;
+  width: 100%;
+  overflow: hidden;
+  ._text {
+    width: max-content;
+    position: absolute;
+  }
+}

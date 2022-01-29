@@ -50,8 +50,8 @@ const ContactPage: FC<ContactPageProps> = () => {
       const res = await req.data;
 
       if (res.error) setError({ show: true, message: res.error });
-    } catch (error) {
-      console.log(error);
+    } catch (error: any) {
+      setError({ show: true, message: error.message });
     }
   };
 
