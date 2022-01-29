@@ -52,6 +52,7 @@ const Input: FC<InputProps & Common> = ({
       updateState(value);
       if (error.show) setError({ show: false });
     } else {
+      updateState("");
       setError({ show: true, message: validate?.message });
     }
   };
@@ -61,6 +62,7 @@ const Input: FC<InputProps & Common> = ({
       variants={variants}
       animate="animate"
       initial="initial"
+      aria-required={inputProps?.required}
     >
       {icon}
       <div className={styles.input}>

@@ -6,6 +6,19 @@
   display: flex;
   border-radius: 5px;
   align-items: center;
+  position: relative;
+
+  background-color: var(--background);
+
+  &[aria-required="true"]::after {
+    content: "*";
+    color: var(--error-text);
+    margin: 5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
   input,
   textarea {
     background: var(--background);

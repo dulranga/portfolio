@@ -6,7 +6,12 @@ import {
   Title,
   ViewQuilt,
 } from "@material-ui/icons";
-import { EMAIL_REGEX, TITLE_REGEX, USERNAME_REGEX } from "./regex";
+import {
+  DESCRIPTION_REGEX,
+  EMAIL_REGEX,
+  TITLE_REGEX,
+  USERNAME_REGEX,
+} from "./regex";
 
 const contactFields: InputProps[] = [
   {
@@ -63,7 +68,7 @@ const contactFields: InputProps[] = [
     icon: <Description />,
     inputElement: <textarea cols={10} rows={5} />,
     validator: (value) => ({
-      valid: EMAIL_REGEX.test(value),
+      valid: DESCRIPTION_REGEX.test(value),
       message: "This need to be a simple description",
     }),
     inputProps: {

@@ -33,6 +33,15 @@ const ContactPage: FC<ContactPageProps> = () => {
   const submitInfo = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    if (
+      contactFields
+        .filter((field) => field.inputProps?.required)
+        .some((input) => !!info[input.id] == false)
+    )
+      return setError({ show: true, message: "Fill all required fields" });
+
+    setError({ show: false });
+
     const fd = new FormData();
 
     Object.keys(info).forEach((key) => {
