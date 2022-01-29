@@ -1,0 +1,29 @@
+$close-btn-size: 0.6rem;
+
+.error {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 30px;
+  font-size: clamp(12px, 0.5rem, 24px);
+
+  color: #fff;
+  background-color: var(--error-bg);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+.submit_error {
+  button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 5px;
+    background: transparent;
+    border: none;
+
+    svg {
+      width: $close-btn-size;
+      height: $close-btn-size;
+    }
+  }
+}
