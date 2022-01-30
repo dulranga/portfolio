@@ -1,3 +1,4 @@
+import backend from "@common/axios";
 import Input from "@components/input";
 import { DownloadResume } from "@components/intro";
 import contactFields from "@constants/contact-details";
@@ -16,15 +17,17 @@ type Info = {
   [key in Key]: string | Blob;
 };
 
+const DEFAULTS = {
+  name: "",
+  description: "",
+  email: "",
+  title: "",
+  ui: "",
+};
+
 const ContactPage: FC<ContactPageProps> = () => {
   const [error, setError] = useState<SubmitErrorProps>({ show: false });
-  const [info, setInfo] = useState<Info>({
-    name: "",
-    description: "",
-    email: "",
-    title: "",
-    ui: "",
-  });
+  const [info, setInfo] = useState<Info>(DEFAULTS);
 
   const updateInfo = (key: Key) => (value: string | Blob) => {
     setInfo((prev) => ({ ...prev, [key]: value }));
@@ -49,16 +52,21 @@ const ContactPage: FC<ContactPageProps> = () => {
     });
 
     try {
-      // const req = await backend.post("contact", new FormData(e.target));
-      const req = await axios({
+      const req = await backend({
+        url: "/contact.php",
         method: "POST",
-        url: "http://localhost:8000/contact.php",
         data: fd,
       });
 
       const res = await req.data;
 
-      if (res.error) setError({ show: true, message: res.error });
+      if (res.error) return setError({ show: true, message: res.error });
+      if (res.success) {
+        // @ts-ignore
+        e.target.reset();
+        setInfo(DEFAULTS);
+        return setError({ success: true, show: true, message: res.message });
+      }
     } catch (error: any) {
       setError({ show: true, message: error.message });
     }

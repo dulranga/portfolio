@@ -9,7 +9,10 @@ export interface InputProps {
   id: string;
   inputProps?: InputHTMLAttributes<HTMLInputElement>;
   inputElement?: React.ReactElement;
-  validator?: (currentValue: string) => { valid: boolean; message?: string };
+  validator?: (currentValue: string) => {
+    valid: boolean;
+    message?: string;
+  };
 }
 type Common = { delay: number; updateState: (value: any) => void };
 

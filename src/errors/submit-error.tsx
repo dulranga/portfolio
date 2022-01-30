@@ -21,9 +21,15 @@ export interface SubmitErrorProps {
   show: boolean;
   message?: string;
   close?: () => void;
+  success?: boolean;
 }
 
-const SubmitError: FC<SubmitErrorProps> = ({ show, message, close }) => {
+const SubmitError: FC<SubmitErrorProps> = ({
+  show,
+  message,
+  close,
+  success,
+}) => {
   return (
     <AnimatePresence initial={false} exitBeforeEnter>
       {show && (
@@ -33,7 +39,11 @@ const SubmitError: FC<SubmitErrorProps> = ({ show, message, close }) => {
           exit="exit"
           key={"submit-error"}
           animate="animate"
-          className={[styles.submit_error, styles.error].join(" ")}
+          className={[
+            styles.submit_error,
+            styles.error,
+            success && styles.success,
+          ].join(" ")}
         >
           <span>{message}</span>
           <button onClick={close}>

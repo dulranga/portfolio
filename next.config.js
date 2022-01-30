@@ -19,4 +19,7 @@ module.exports = {
       statusCode: 301,
     }));
   },
+  publicRuntimeConfig: {
+    backend: process.env.BACKEND_URL,
+  },
 };
