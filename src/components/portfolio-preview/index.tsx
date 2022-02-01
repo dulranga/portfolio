@@ -41,30 +41,30 @@ const PortfolioMini: FC<PortfolioMiniProps> = ({
   };
 
   return (
-    <motion.div
-      className={styles.container}
-      variants={variants}
-      initial="initial"
-      animate="animate"
-      whileHover="hover"
-    >
-      <Image
-        src={image}
-        width={480}
-        height={320}
-        alt="Spicy Gaming"
-        className={styles.image}
-        objectFit="cover"
-      />
-      <div className={styles.content}>
-        <h2>
-          <Link href={`portfolio/${id}`}>
-            <a>{title}</a>
-          </Link>
-        </h2>
-        <p>{description}</p>
-      </div>
-    </motion.div>
+    <Link href={`portfolio/${id}`}>
+      <a>
+        <motion.div
+          className={styles.container}
+          variants={variants}
+          initial="initial"
+          animate="animate"
+          whileHover="hover"
+        >
+          <Image
+            src={image}
+            width={480}
+            height={320}
+            alt="Spicy Gaming"
+            className={styles.image}
+            objectFit="cover"
+          />
+          <div className={styles.content}>
+            <h2>{title}</h2>
+            <p>{description}</p>
+          </div>
+        </motion.div>
+      </a>
+    </Link>
   );
 };
 

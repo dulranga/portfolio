@@ -9,6 +9,7 @@
       "@providers/*": ["src/providers/*"],
       "@constants/*": ["src/constants/*"],
       "@assets/*": ["src/assets/*"],
+      "@common/*": ["src/common/*"],
       "@images/*": ["/public/images/*"]
     },
     "target": "es5",
