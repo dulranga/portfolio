@@ -1,9 +1,7 @@
 import axios from "axios";
-import getConfig from "next/config";
-const { publicRuntimeConfig } = getConfig();
 
 const backend = axios.create({
-  baseURL: publicRuntimeConfig.backend,
+  baseURL: process.env.NEXT_PUBLIC_BACKEND_URL,
 });
 
 export default backend;

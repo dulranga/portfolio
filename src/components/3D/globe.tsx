@@ -20,11 +20,11 @@ const Globe: FC<GlobeProps> = () => {
 };
 const Earth = () => {
   const [texture, setTexture] = useState<{ [key: string]: Texture | null }>({});
-  const loader = new TextureLoader();
 
   const sphere = useRef<any>(null);
 
   useEffect(() => {
+    const loader = new TextureLoader();
     const earth = loader.load("/3d/earth.jpg");
     const bumps = loader.load("/3d/earth.bump.jpg");
     setTexture((prev) => ({ ...prev, earth, bumps }));
