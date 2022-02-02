@@ -6,7 +6,7 @@ import SubmitError, { SubmitErrorProps } from "@errors/submit-error";
 import styles from "@styles/pages.module.scss";
 import axios from "axios";
 import Head from "next/head";
-import { FC, FormEvent, useState } from "react";
+import { FC, FormEvent, useEffect, useState } from "react";
 
 interface ContactPageProps {}
 
@@ -29,6 +29,10 @@ const ContactPage: FC<ContactPageProps> = () => {
   const [error, setError] = useState<SubmitErrorProps>({ show: false });
   const [info, setInfo] = useState<Info>(DEFAULTS);
 
+  useEffect(() => {
+    console.log(info);
+  }, [info]);
+
   const updateInfo = (key: Key) => (value: string | Blob) => {
     setInfo((prev) => ({ ...prev, [key]: value }));
   };
@@ -39,7 +43,7 @@ const ContactPage: FC<ContactPageProps> = () => {
     if (
       contactFields
         .filter((field) => field.inputProps?.required)
-        .some((input) => !!info[input.id] == false)
+        .some((input) => !!info[input.id] === false)
     )
       return setError({ show: true, message: "Fill all required fields" });
 

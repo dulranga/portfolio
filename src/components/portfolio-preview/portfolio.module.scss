@@ -1,14 +1,17 @@
 $card-background: #015a17;
+$card-foreground: lightgreen;
 
 .container {
   max-width: 400px;
   font-size: 0.5rem;
   position: relative;
-  background-color: lightgreen;
+  background-color: $card-foreground;
   z-index: 1;
   display: flex;
   color: #000;
   flex-direction: column;
+
+  min-height: 100%;
 
   .content {
     z-index: 5;
@@ -26,16 +29,20 @@ $card-background: #015a17;
   .image {
     background: $card-background;
   }
-  &::after {
+  &::after,
+  &::before {
     content: "";
     width: 100%;
     height: 100%;
-    background-color: var(--primary-dark);
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -1;
     transition: 0.2s ease all;
+    background-color: $card-foreground;
+  }
+  &::after {
+    z-index: -1;
+    background-color: var(--primary-dark);
   }
   &:hover::after {
     box-shadow: inherit;

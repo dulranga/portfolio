@@ -1,21 +1,17 @@
+import { Portfolio } from "@interfaces/portfolio";
 import { motion, Variants } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { FC } from "react";
 import styles from "./portfolio.module.scss";
 
-interface PortfolioMiniProps {
+type Extra = {
   delay: number;
-  title: string;
-  description: string;
-  image: string;
-  id: string;
-}
-
-const PortfolioMini: FC<PortfolioMiniProps> = ({
+};
+const PortfolioMini: FC<Portfolio & Extra> = ({
   delay,
   title,
-  description,
+  short_description,
   image,
   id,
 }) => {
@@ -60,7 +56,7 @@ const PortfolioMini: FC<PortfolioMiniProps> = ({
           />
           <div className={styles.content}>
             <h2>{title}</h2>
-            <p>{description}</p>
+            <p>{short_description}</p>
           </div>
         </motion.div>
       </a>
