@@ -11,6 +11,9 @@ class MyDocument extends Document {
     return { ...initialProps };
   }
 
+  bots =
+    "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1";
+
   render() {
     return (
       <Html lang="en-US">
@@ -25,9 +28,19 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;800;900&family=Mochiy+Pop+P+One&display=swap"
             rel="stylesheet"
           />
+          <meta name="robots" content="index, follow" />
+          <meta name="googlebot" content={this.bots} />
+          <meta name="bingbot" content={this.bots} />
 
+          <meta
+            name="apple-mobile-web-app-title"
+            content="Dulranga's Portfolio"
+          />
+          <meta name="application-name" content="Dulranga's Portfolio" />
+          <meta name="msapplication-TileColor" content="#00ff7f" />
           <meta name="theme-color" content="#00ff7f" />
           <meta name="robots" content="follow, index" />
+          <meta name="next-font-preconnect" />
           <meta property="og:locale" content="en_US" />
           <meta property="og:type" content="website" />
           <meta property="og:title" content="Portfolio of Dulranga" />

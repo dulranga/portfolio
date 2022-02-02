@@ -7,9 +7,10 @@ import buttonStyles from "@components/intro/intro.module.scss";
 import portfolioData from "@constants/portfolio";
 import { Portfolio } from "@interfaces/portfolio";
 import NextPage from "@components/next-page";
+import Head from "next/head";
 
 const CreationsPage: FC<Portfolio> = (props) => {
-  const { title, description, image, link, id } = props;
+  const { title, description, image, link, id, short_description } = props;
 
   const next = useMemo(() => {
     const currentIndex = portfolioData.findIndex((item) => item.id === id);
@@ -19,6 +20,18 @@ const CreationsPage: FC<Portfolio> = (props) => {
 
   return (
     <main className={styles.container}>
+      <Head>
+        <title>{title} - Dulranga.ml</title>
+        <meta name="description" content={short_description} />
+        <meta name="twitter:site" content="@dulrangaD" />
+        <meta property="og:url" content="https://dulranga.ml" />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={`${title} - Dulranga.ml`} />
+        <meta property="og:description" content={short_description} />
+        <meta property="og:image" content={image} />
+        <meta property="og:image:width" content="880" />
+        <meta property="og:image:height" content="660" />
+      </Head>
       <div className={styles.cover}>
         <Image
           src={image}

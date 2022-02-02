@@ -27,7 +27,7 @@ const ReachMe: FC<ReachMeProps> = () => {
             label="Email"
             icon={<Mail htmlColor="#fff" />}
             link={encodeURI(
-              "mailto:dulranga.webdesign@gmail.com?subject=Website Creation&body=Hi, I am interested to create my next website with you! Can we discuss that?"
+              "mailto:me@dulranga.ml?subject=Website Creation&body=Hi, I am interested to create my next website with you! Can we discuss that?"
             )}
           />
           <SocialLink

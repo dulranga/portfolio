@@ -2,20 +2,40 @@ import { Portfolio } from "@interfaces/portfolio";
 
 const portfolioData: Portfolio[] = [
   {
-    title: "Gaming Marketplace",
+    title: "SpicyGaming",
     short_description: "an NFSW games marketplace build with React.js",
     image: "/images/portfolios/spicygaming.jpg",
     id: "spicy-1",
     description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum, ex tempora! Veniam numquam ducimus debitis velit illo obcaecati perspiciatis architecto natus eligendi illum dolore quis, asperiores possimus maiores sed reprehenderit qui totam tempore. Consequatur, libero porro expedita obcaecati asperiores iure?",
+      "an NFSW gaming marketplace where you can download games, read articles, add comments, become content creators and upload your own games etc. Developed using ReactJS",
     link: "https://www.spicygaming.net",
   },
   {
     title: "Termux Tricks",
-    short_description: "",
+    short_description: "CTF platform for developers",
     id: "termux-tricks",
     image: "/images/portfolios/spicygaming.jpg",
-    description: "",
+    description:
+      "A Capture the Flag (CTF) playground for developers. Developed using ReactJS (frontend) & PHP (backend).",
+  },
+  {
+    title: "Country search app",
+    short_description: "a web app where you can search countries",
+    id: "rest-countries",
+    image: "/images/portfolios/spicygaming.jpg",
+    description:
+      "Search Countries and get information about flags, boundaries, languagues and a lot. Developed with NextJS",
+    link: "https://rest-countries-silk.vercel.app",
+  },
+  {
+    title: "Recipe App",
+    short_description:
+      "Native App for iOS & Android to get informations about recipes",
+    id: "recipe-app",
+    image: "/images/portfolios/spicygaming.jpg",
+    description:
+      "Search Countries and get information about flags, boundaries, languagues and a lot. Developed with NextJS",
+    link: "https://github.com/dulranga/savory-recipe-app",
   },
 ];
 
