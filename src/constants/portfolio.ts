@@ -5,7 +5,7 @@ const portfolioData: Portfolio[] = [
     title: "SpicyGaming",
     short_description: "an NFSW games marketplace build with React.js",
     image: "/images/portfolios/spicygaming.jpg",
-    id: "spicy-1",
+    id: "spicy-gaming",
     description:
       "an NFSW gaming marketplace where you can download games, read articles, add comments, become content creators and upload your own games etc. Developed using ReactJS",
     link: "https://www.spicygaming.net",
