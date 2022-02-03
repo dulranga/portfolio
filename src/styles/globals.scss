@@ -16,17 +16,14 @@ html {
     background: #c2c2c2;
     border-radius: 5px;
   }
-  @media screen and (max-width: 480px) {
-    font-size: 16px;
-  }
-  @media screen and (min-width: 2000px) {
-    font-size: 48px;
-  }
 }
 body,
-button {
-  // font-family: "Inter", sans-serif;
+button,
+input,
+textarea {
   font-family: "Mochiy Pop P One", sans-serif;
+
+  // font-famikly: "Inter", sans-serif;
 }
 button {
   outline: none;
@@ -56,6 +53,7 @@ textarea {
 main {
   max-width: 1500px;
   margin: 0 1rem;
+  min-height: 100vh;
 }
 h1 {
   font-weight: 900;
@@ -67,4 +65,24 @@ body {
   overflow-x: hidden;
 
   // cursor: none;
+}
+
+@media screen and (max-width: 480px) {
+  main {
+    padding-top: 1rem;
+  }
+  html {
+    font-size: 24px;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+  p {
+    font-size: 0.7rem;
+  }
+}
+@media screen and (min-width: 2000px) {
+  html {
+    font-size: 48px;
+  }
 }

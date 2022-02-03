@@ -1,0 +1,40 @@
+.container {
+  margin: 0.5rem 0;
+  padding: 10px;
+  border: 2px solid var(--primary-dark);
+
+  display: flex;
+  border-radius: 5px;
+  align-items: center;
+  position: relative;
+
+  background-color: var(--background);
+
+  &[aria-required="true"]::after {
+    content: "*";
+    color: var(--error-text);
+    margin: 5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  input,
+  textarea {
+    background: var(--background);
+    color: #fff;
+    font-size: 1rem;
+    padding: 0;
+    width: 100%;
+  }
+  label {
+    font-size: 0.5rem;
+  }
+  .input {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

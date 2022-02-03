@@ -1,0 +1,56 @@
+$card-background: #015a17;
+$card-foreground: lightgreen;
+
+.container {
+  max-width: 400px;
+  font-size: 0.5rem;
+  position: relative;
+  background-color: $card-foreground;
+  z-index: 1;
+  display: flex;
+  color: #000;
+  flex-direction: column;
+
+  min-height: 100%;
+
+  .content {
+    z-index: 5;
+    position: relative;
+    padding: 0.5rem;
+    background-color: inherit;
+    margin: 0;
+  }
+  h2 {
+    margin: 0.2rem 0;
+  }
+  p {
+    font-weight: 300;
+  }
+  .image {
+    background: $card-background;
+  }
+  &::after,
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.2s ease all;
+    background-color: $card-foreground;
+  }
+  &::after {
+    z-index: -1;
+    background-color: var(--primary-dark);
+  }
+  &:hover::after {
+    box-shadow: inherit;
+    margin: 0.75rem;
+  }
+  @media screen and (max-width: 480px) {
+    h2 {
+      font-size: 1rem;
+    }
+  }
+}

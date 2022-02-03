@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  align-items: baseline;
+  width: fit-content;
+  .label {
+    padding: 10px 0;
+    position: relative;
+    color: #fff;
+    font-size: 1.2rem;
+    &::after {
+      position: absolute;
+      max-width: 0%;
+      width: 100%;
+      transition: 0.5s ease all;
+      height: 5px;
+      background: var(--primary-dark);
+      content: "";
+      bottom: 10px;
+      left: 0;
+      border-radius: 50px;
+    }
+  }
+
+  &:hover {
+    .label::after {
+      max-width: 1000px;
+    }
+  }
+}
+.wrapper {
+  margin: 0.25rem 0;
+  font-size: 1.75rem;
+  overflow: hidden;
+}
+.icon {
+  margin: 0 0.5rem;
+  align-self: center;
+  display: flex;
+  svg {
+    font-size: inherit;
+  }
+}

@@ -1,7 +1,7 @@
 .actions {
   padding: 1rem;
   margin-bottom: 1rem;
-  position: absolute;
+  position: fixed;
   top: 50%;
   transform: translateY(-50%);
   right: 0;
@@ -30,6 +30,11 @@
     width: 0;
     opacity: 0;
   }
+  .label {
+    width: 0;
+    overflow: hidden;
+    position: absolute;
+  }
 
   &:hover,
   &:focus {
@@ -41,6 +46,11 @@
     span {
       width: auto;
       opacity: 1;
+      position: relative;
+    }
+    .label {
+      width: auto;
+      overflow: visible;
       position: relative;
     }
   }

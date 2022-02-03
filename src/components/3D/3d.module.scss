@@ -1,0 +1,19 @@
+.canvas {
+  width: 500px;
+  height: 500px;
+  canvas {
+    width: inherit !important;
+    height: inherit !important;
+  }
+  position: fixed !important;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -2;
+}
+
+.globe_canvas {
+  aspect-ratio: 1/1;
+  max-width: 500px;
+}

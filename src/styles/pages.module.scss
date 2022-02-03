@@ -1,0 +1,57 @@
+.more {
+  height: 50vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.portfolio_content {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1rem 0;
+
+  @media screen and (max-width: 480px) {
+    gap: 2rem;
+  }
+}
+
+.reach_me {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  & > * {
+    &:nth-child(2) {
+      flex: 0.5;
+    }
+    &:nth-child(1) {
+      flex: 0.5;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    flex-direction: column-reverse;
+    padding-bottom: 2rem;
+  }
+}
+
+.contact_page {
+  padding: 1rem 0.5rem;
+  .submit {
+    background-color: transparent;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    border: 3px solid var(--primary-dark);
+    margin-right: 1rem;
+    &:hover,
+    &:focus {
+      color: #000;
+      background: var(--primary);
+      transition: 0.2s;
+    }
+  }
+}

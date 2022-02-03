@@ -5,16 +5,27 @@ import styles from "./next-page.module.scss";
 
 interface NextPageProps {
   link: string;
+  label?: string;
 }
 
-const NextPage: FC<NextPageProps> = ({ link }) => {
+const NextPage: FC<NextPageProps> = ({ link, label }) => {
   return (
     <div className={styles.actions}>
-      <button className={styles.skipper}>
-        <Link href={link}>
-          <ChevronRight />
-        </Link>
-      </button>
+      <Link href={link}>
+        <a>
+          <button className={styles.skipper}>
+            <ChevronRight />
+            {label && (
+              <div
+                aria-label={`Go to ${label} details page`}
+                className={styles.label}
+              >
+                {label}
+              </div>
+            )}
+          </button>
+        </a>
+      </Link>
     </div>
   );
 };

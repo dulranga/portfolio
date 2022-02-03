@@ -1,5 +1,7 @@
+$card-size: 300px;
+
 .tech {
-  width: 300px;
+  width: $card-size;
   flex: 1;
   flex-shrink: 0;
   flex-basis: auto;
@@ -18,23 +20,25 @@
   margin: 1rem 0;
 
   width: 100%;
-  overflow-x: scroll;
+  overflow: hidden;
 
-  &::-webkit-scrollbar {
-    height: 5px;
-  }
-  &::-webkit-scrollbar-thumb {
-    background: var(--primary-dark);
-    border-radius: 50px;
-  }
+  position: sticky;
+  top: 50%;
+  transform: translateY(-50%);
+
+  // &::-webkit-scrollbar {
+  //   height: 5px;
+  // }
+  // &::-webkit-scrollbar-thumb {
+  //   background: var(--primary-dark);
+  //   border-radius: 50px;
+  // }
 }
 .wrapper {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   scroll-snap-type: x mandatory;
-
-  flex-flow: row nowrap;
 }
 .cover {
   position: relative;

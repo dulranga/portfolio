@@ -3,10 +3,11 @@ $size: 40px;
 .cursor {
   position: absolute;
   z-index: 9999999999;
-  margin: -1 * $size / 20;
+  transform: translate(-50%, -50%);
   width: $size;
   aspect-ratio: 1/1;
   border-radius: 50%;
   border: 5px solid springgreen;
-  // background: springgreen;
+
+  pointer-events: none;
 }

@@ -15,6 +15,7 @@ const Intro = React.forwardRef<HTMLElement>(({}: IntroProps, ref) => {
           width={300}
           height={400}
           blurDataURL={photo.blurDataURL}
+          placeholder="blur"
           objectFit="contain"
         />
       </div>
@@ -22,21 +23,32 @@ const Intro = React.forwardRef<HTMLElement>(({}: IntroProps, ref) => {
         <div>
           <p>I am</p>
           <h1>Dulranga Dhawanitha</h1>
+          <p>
+            <small>
+              a Frontend developer with 3+ years of experience with
+              responsiveness, animations, bugs etc
+            </small>
+          </p>
         </div>
-
-        <button className={styles.resume}>
-          <a
-            href="/CV.pdf"
-            download="dulranga-cv"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Get Resume
-          </a>
-        </button>
+        <DownloadResume />
       </div>
     </section>
   );
 });
+
+export const DownloadResume: FC = () => {
+  return (
+    <button className={styles.resume}>
+      <a
+        href="/CV.pdf"
+        download="dulranga-cv"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Get Resume
+      </a>
+    </button>
+  );
+};
 
 export default Intro;
