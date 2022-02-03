@@ -9,10 +9,6 @@ import "../styles/variables.globals.scss";
 const reportWebVitals = (metric: NextWebVitalsMetric) => {
   // console.log(metric);
 };
-
-// pat.ns.cloudflare.com
-// thaddeus.ns.cloudflare.com
-
 const variants: Variants = {
   hidden: { opacity: 0, scale: 0.9 },
   enter: { opacity: 1, scale: 1 },

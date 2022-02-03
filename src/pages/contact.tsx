@@ -29,9 +29,7 @@ const ContactPage: FC<ContactPageProps> = () => {
   const [error, setError] = useState<SubmitErrorProps>({ show: false });
   const [info, setInfo] = useState<Info>(DEFAULTS);
 
-  useEffect(() => {
-    console.log(info);
-  }, [info]);
+  useEffect(() => {}, [info]);
 
   const updateInfo = (key: Key) => (value: string | Blob) => {
     setInfo((prev) => ({ ...prev, [key]: value }));
